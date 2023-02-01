@@ -14,7 +14,7 @@ const Searchbar = () => {
       .get(`http://hn.algolia.com/api/v1/search?query=${searchWord}`)
       .then((res) => {
         setNews(res.data.hits);
-        console.log(res.data.hits);
+        console.log(res);
       })
       .catch((err) => {
         console.log(err);
