@@ -1,10 +1,10 @@
 import React from "react";
 
-function PostsList({ posts }) {
+function PostsList({ news }) {
   //console.log(posts);
   return (
     <div>
-      {posts.map((post) => (
+      {news.map((post) => (
         <div key={post.id}>
           <div>
             {post.points} point{post.points > 1 && "s"}

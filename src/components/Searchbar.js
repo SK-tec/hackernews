@@ -1,11 +1,10 @@
 import React from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
-import { useState} from "react";
+import { useState } from "react";
 import axios from "axios";
 
-const Searchbar = () => {
+const Searchbar = ({ news, setNews }) => {
   const [searchWord, setSearchWord] = useState("");
-  const [news, setNews] = useState([]);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -26,8 +25,8 @@ const Searchbar = () => {
       <Container className="mt-5">
         <Row>
           <Col sm={6}>
-            <Form >
-              <Form.Control 
+            <Form>
+              <Form.Control
                 type="text"
                 placeholder="Enter your Search Keyword here"
                 value={searchWord}
@@ -42,12 +41,25 @@ const Searchbar = () => {
           </Col>
         </Row>
       </Container>
-      <Container >
+      <Container>
         {searchWord !== "" ? (
-          news.map((element,index) => <ul><li>{element.title} <a href={element.url} target='_blank'>{element.url}</a>    
-          </li></ul>)
+          news.map((element, index) => (
+            <ul>
+              <li>
+                {element.title}{" "}
+                <a href={element.url} target="_blank">
+                  {element.url}
+                </a>
+              </li>
+            </ul>
+          ))
         ) : (
-          <div style={{ minHeight: '150px' }}  className="mt-5 bg-info d-flex justify-content-center align-items-center">Welcome To HackerNews</div>
+          <div
+            style={{ minHeight: "150px" }}
+            className="mt-5 bg-info d-flex justify-content-center align-items-center"
+          >
+            Welcome To HackerNews
+          </div>
         )}
       </Container>
     </>
