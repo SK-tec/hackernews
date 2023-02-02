@@ -25,7 +25,7 @@ const Searchbar = ({ news, setNews }) => {
       <Container className="mt-5">
         <Row>
           <Col sm={6}>
-            <Form>
+            <Form onSubmit={handleClick}>
               <Form.Control
                 type="text"
                 placeholder="Enter your Search Keyword here"
@@ -41,7 +41,7 @@ const Searchbar = ({ news, setNews }) => {
           </Col>
         </Row>
       </Container>
-      <Container>
+      {/* <Container>
         {searchWord !== "" ? (
           news.map((element, index) => (
             <ul>
@@ -61,7 +61,7 @@ const Searchbar = ({ news, setNews }) => {
             Welcome To HackerNews
           </div>
         )}
-      </Container>
+      </Container> */}
     </>
   );
 };
