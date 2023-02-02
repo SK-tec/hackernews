@@ -10,7 +10,7 @@ const Searchbar = ({ news, setNews }) => {
     e.preventDefault();
 
     axios
-      .get(`http://hn.algolia.com/api/v1/search?query=${searchWord}`)
+      .get(`https://hn.algolia.com/api/v1/search?query=${searchWord}`)
       .then((res) => {
         setNews(res.data.hits);
         console.log(res.data.hits);
