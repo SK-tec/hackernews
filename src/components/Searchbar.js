@@ -2,22 +2,42 @@ import React from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import { useState } from "react";
 import axios from "axios";
+import Spinner from "./Spinner";
 
 const Searchbar = ({ news, setNews }) => {
+  const [loading, setLoading] = useState(false);
   const [searchWord, setSearchWord] = useState("");
 
+  // const handleClick = (e) => {
+  //   e.preventDefault();
+
+  //   axios
+  //     .get(`https://hn.algolia.com/api/v1/search?query=${searchWord}`)
+  //     .then((res) => {
+  //       setNews(res.data.hits);
+  //       console.log(res.data.hits);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
   const handleClick = (e) => {
     e.preventDefault();
-
-    axios
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false)
+      axios
       .get(`https://hn.algolia.com/api/v1/search?query=${searchWord}`)
       .then((res) => {
+        
         setNews(res.data.hits);
+
         console.log(res.data.hits);
       })
       .catch((err) => {
         console.log(err);
-      });
+      });},2000)
+    
   };
 
   return (
@@ -41,27 +61,8 @@ const Searchbar = ({ news, setNews }) => {
           </Col>
         </Row>
       </Container>
-      {/* <Container>
-        {searchWord !== "" ? (
-          news.map((element, index) => (
-            <ul>
-              <li>
-                {element.title}{" "}
-                <a href={element.url} target="_blank">
-                  {element.url}
-                </a>
-              </li>
-            </ul>
-          ))
-        ) : (
-          <div
-            style={{ minHeight: "150px" }}
-            className="mt-5 bg-info d-flex justify-content-center align-items-center"
-          >
-            Welcome To HackerNews
-          </div>
-        )}
-      </Container> */}
+      {loading ? <Spinner /> : <p></p>}
+     
     </>
   );
 };
