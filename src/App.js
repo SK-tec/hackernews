@@ -2,6 +2,7 @@ import "./App.css";
 import PostsList from "./PostsList";
 import Header from "./components/Header";
 import Searchbar from "./components/Searchbar";
+import Footer from "./components/Footer";
 
 
 import { useState } from "react";
@@ -17,8 +18,9 @@ function App() {
       <div>
        
         <Searchbar news={news} setNews={setNews} />
-        <PostsList news={news} />
+        <PostsList news={news} />        
       </div>
+      <Footer />
     </div>
   );
 }
