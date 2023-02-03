@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+a:hover {
+  background-color: rgb(212, 243, 99);
+ 
+}
+.post{
+  color:darkblue;
+}

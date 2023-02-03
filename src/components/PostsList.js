@@ -11,7 +11,7 @@ function PostsList({ posts }) {
           </div>
           <h1>{post.title}</h1>
           <a href={post.url}>{post.url}</a>
-          <div>{post.author}</div>
+          <div></div>
           <div>{post.created_at}</div>
           <div>
             {post.children.length} comment{post.children.length > 1 && "s"}
