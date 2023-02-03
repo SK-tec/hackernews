@@ -6,7 +6,7 @@ import Spinner from "./Spinner";
 
 const Searchbar = ({ news, setNews }) => {
   const [loading, setLoading] = useState(false);
-  const [searchWord, setSearchWord] = useState("React");
+  const [searchWord, setSearchWord] = useState("");
 
   // const handleClick = (e) => {
   //   e.preventDefault();
