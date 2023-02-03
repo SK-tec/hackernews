@@ -60,7 +60,7 @@ const Footer = ({ content }) => {
                 </p>
                 <input
                   type="email"
-                  className="form-control"
+                  className="form-control mx-auto"
                   placeholder="Your Email"
                 />
                 <button type="button" className="btn btn-primary">
