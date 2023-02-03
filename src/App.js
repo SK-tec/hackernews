@@ -10,11 +10,12 @@ function App() {
 
   return (
     <div className="App">
+     <Header />
       <h1 style={{ color: "blue" }}>
         Welcome to <strong>Hacker News</strong>
       </h1>
       <div>
-        <Header />
+       
         <Searchbar news={news} setNews={setNews} />
         <PostsList news={news} />
       </div>
