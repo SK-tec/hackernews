@@ -1,6 +1,8 @@
 import "./App.css";
 import PostsList from "./PostsList";
+import Header from "./components/Header";
 import Searchbar from "./components/Searchbar";
+
 
 import { useState } from "react";
 function App() {
@@ -12,6 +14,7 @@ function App() {
         Welcome to <strong>Hacker News</strong>
       </h1>
       <div>
+        <Header />
         <Searchbar news={news} setNews={setNews} />
         <PostsList news={news} />
       </div>
