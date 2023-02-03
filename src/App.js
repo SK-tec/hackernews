@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <h1 style={{ color: "blue" }}>
-        Welcome to <strong>Hacker News</strong> Project
+        Welcome to <strong>Hacker News</strong>
       </h1>
       <div>
         <Searchbar news={news} setNews={setNews} />
